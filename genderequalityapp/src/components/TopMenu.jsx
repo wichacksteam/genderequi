@@ -28,14 +28,7 @@ function TopMenu() {
   return (
     <AppBar position='fixed' className={classes.appBar}>
       <Toolbar>
-        {/* <IconButton
-          edge='start'
-          className={classes.menuButton}
-          color='inherit'
-          aria-label='menu'
-        >
-          <MenuIcon />
-        </IconButton> */}
+    
         <MenuItem>
           <Typography variant='h6' className={classes.title}>
             Home
