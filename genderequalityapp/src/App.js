@@ -19,18 +19,22 @@ const theme = createTheme({
  
 });
 
-function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} /> {/* Replace the element with the page you are testing */}
+// function App() {
+//   return (
+//     <ThemeProvider theme={theme}>
+//       <BrowserRouter>
+//         <Routes>
+//           <Route path='/' element={<Home />} /> {/* Replace the element with the page you are testing */}
        
          
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
-  );
+//         </Routes>
+//       </BrowserRouter>
+//     </ThemeProvider>
+//   );
+// }
+
+function App() {
+  return <Home />;
 }
 
 export default App;
