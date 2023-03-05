@@ -15,6 +15,11 @@ import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 
 const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
@@ -34,6 +39,36 @@ const useStyles = makeStyles(theme => ({
 
 //const cards = [1, 2, 3];
 
+function createData(
+  id: number,
+  category: string,
+  women: string,
+  men: string,
+) {
+  return { id, category, women, men };
+}
+
+
+const rows = [
+  createData(
+    0,
+    'Workforce',
+    '43%',
+    '57%',
+  ),
+  createData(
+    1,
+    'Pay Gap',
+    '24%',
+    '76%',
+  ),
+  createData(
+    2,
+    'Bonus',
+    '35%',
+    '65%',
+  ),
+];
 const theme = createTheme();
 
 function MainContent() {
@@ -57,6 +92,30 @@ function MainContent() {
           }}
         >
         </Box>
+        <React.Fragment>
+        <div className={classes.title}>
+        <Typography variant='h6'>Gender Equality for Companies</Typography>
+      </div>
+        <Table size="small">
+          <TableHead>
+            <TableRow>
+              <TableCell>Category</TableCell>
+              <TableCell>Women</TableCell>
+              <TableCell>Men</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow key={row.id}>
+                <TableCell>{row.category}</TableCell>
+                <TableCell>{row.women}</TableCell>
+                <TableCell>{row.men}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </React.Fragment>
+
         <Container sx={{ py: 8 }} maxWidth="md">
 
           <Grid container spacing={8}>
@@ -76,7 +135,29 @@ function MainContent() {
                   <CardActions>
                     <Button size="small">View</Button>
                   </CardActions>
+                  
                 </Card>
+
+                <Container sx={{ py: 1 }} maxWidth="md">
+        <Grid container spacing={2}>
+            <Grid item xs={4}> 
+        <Card
+                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                >
+                     <CardMedia
+                       component="img"
+                       sx={{
+                         // 16:9
+                         pt: '25%',
+                       }}
+                       image="https://cdn3.vectorstock.com/i/1000x1000/83/42/winner-award-golden-badge-ribbon-vector-16488342.jpg"
+                       alt="random"
+                     />
+                </Card>
+        </Grid>
+        </Grid>
+        </Container>
+                
                 </Grid>
 
                 <Grid item xs={4}> 
@@ -96,6 +177,26 @@ function MainContent() {
                     <Button size="small">View</Button>
                   </CardActions>
                 </Card>
+
+                <Container sx={{ py: 1 }} maxWidth="md">
+        <Grid container spacing={2}>
+            <Grid item xs={4}> 
+        <Card
+                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                >
+                     <CardMedia
+                       component="img"
+                       sx={{
+                         // 16:9
+                         pt: '25%',
+                       }}
+                       image="https://cdn3.vectorstock.com/i/1000x1000/83/42/winner-award-golden-badge-ribbon-vector-16488342.jpg"
+                       alt="random"
+                     />
+                </Card>
+        </Grid>
+        </Grid>
+        </Container>
               </Grid>
 
               <Grid item xs={4}> 
@@ -115,6 +216,25 @@ function MainContent() {
                     <Button size="small">View</Button>
                   </CardActions>
                 </Card>
+                <Container sx={{ py: 1 }} maxWidth="md">
+        <Grid container spacing={2}>
+            <Grid item xs={4}> 
+        <Card
+                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                >
+                     <CardMedia
+                       component="img"
+                       sx={{
+                         // 16:9
+                         pt: '25%',
+                       }}
+                       image="https://cdn3.vectorstock.com/i/1000x1000/83/42/winner-award-golden-badge-ribbon-vector-16488342.jpg"
+                       alt="random"
+                     />
+                </Card>
+        </Grid>
+        </Grid>
+        </Container>
               </Grid>
           </Grid>
         </Container>
